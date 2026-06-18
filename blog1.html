@@ -1,104 +1,160 @@
 <!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="en">
 	<head>
-		<title>How to Managing a custom domain for your GitHub Pages site by Ansh Patel</title>
+		<title>How to Manage a Custom Domain for your GitHub Pages Site | Ansh Patel</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+		<link rel="stylesheet" href="assets/css/modern.css" />
+		<style>
+			/* Additional custom styling specific to blog media elements */
+			.blog-step-image {
+				display: block;
+				max-width: 100%;
+				height: auto;
+				border-radius: 12px;
+				border: 1px solid var(--border-color);
+				margin: 1.5rem 0 2.5rem 0;
+				box-shadow: var(--glass-shadow);
+				transition: var(--transition);
+			}
+			.blog-step-image:hover {
+				border-color: var(--accent);
+			}
+			.blog-step-title {
+				font-size: 1.3rem;
+				font-weight: 600;
+				color: var(--text-primary);
+				margin-top: 2.5rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			.blog-step-title::before {
+				content: '';
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: var(--accent);
+				box-shadow: 0 0 8px var(--accent);
+			}
+		</style>
 	</head>
-	<body class="is-preload">
+	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<!-- Glassmorphic Header -->
+		<header id="header">
+			<a href="index.html" class="logo">Ansh <span>P.</span></a>
+			<nav>
+				<ul>
+					<li><a href="index.html#hero">Home</a></li>
+					<li><a href="index.html#about">About</a></li>
+					<li><a href="index.html#projects">Projects</a></li>
+					<li><a href="index.html#contact">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="header-actions">
+				<!-- Light/Dark toggle button -->
+				<button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+					<i class="fas fa-moon"></i>
+				</button>
+			</div>
+		</header>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+		<!-- Blog Content Container -->
+		<div class="blog-container">
+			
+			<div class="blog-header">
+				<a href="index.html" class="btn-back"><i class="fas fa-chevron-left"></i> Back to Homepage</a>
+				<h1>How to Manage a Custom Domain for your GitHub Pages Site</h1>
+				<div class="blog-meta">
+					<span><i class="far fa-calendar-alt"></i> June 2026</span>
+					<span><i class="far fa-user"></i> Ansh Patel</span>
+					<span><i class="far fa-folder-open"></i> Tutorials</span>
+				</div>
+			</div>
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Blog</strong> by Ansh Patel</a>
-									<ul class="icons">
-										<li><a href="https://twitter.com/Ansh_17_1" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://www.facebook.com/profile.php?id=100012694170827" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.instagram.com/justlike_ansh/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									</ul>
-								</header>
+			<div class="blog-content">
+				<p>Today, I will show you how to configure a custom domain for your GitHub Pages site. In this tutorial, I'll be using a <code>.tech</code> domain that I received for free from the <a href="https://education.github.com/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">GitHub Student Developer Pack</a>. Let's get started!</p>
+				
+				<hr style="border: none; border-top: 1px solid var(--border-color); margin: 2rem 0;">
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>How to Managing a custom domain for your GitHub Pages site</h1>
-									</header>
+				<h3 class="blog-step-title">Step 1: Locate Your Domain Orders</h3>
+				<p>First, log in to your domain registrar's control panel. Find your domain management page or look for your active orders list.</p>
+				<img class="blog-step-image" alt="Domain Registrar Orders Panel" src="images/image3.png">
 
-									    
+				<h3 class="blog-step-title">Step 2: Access Your Domain Details</h3>
+				<p>In your orders list, click on the specific domain name that you want to link to your GitHub Pages site.</p>
+				<img class="blog-step-image" alt="Select Domain" src="images/image1.png">
 
+				<h3 class="blog-step-title">Step 3: Open DNS Management</h3>
+				<p>Scroll down or find the section labeled <strong>DNS Management</strong>, and click on <strong>Manage DNS</strong>.</p>
+				<img class="blog-step-image" alt="Open DNS Management" src="images/image4.png">
 
-									<p><b>Today  I will show you how to add Managing a custom domain for your GitHub Pages site or how to add a custom domain in GitHub site. I am using the .tech domain I got from <a class="_e75a791d-denali-editor-page-rtfLink" href="https://education.github.com/" target="_blank">https://education.github.com/</a> GitHub student pack.  so let's start</b></p>
+				<h3 class="blog-step-title">Step 4: Configure GitHub's A Records</h3>
+				<p>You will see a DNS records table. Click on <strong>Add A Record</strong>. You need to add GitHub's official IP addresses one by one. Create an A record for each of the following four IP addresses, setting the host name/value to <code>@</code>:</p>
+				
+				<ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+					<li><code>185.199.108.153</code></li>
+					<li><code>185.199.109.153</code></li>
+					<li><code>185.199.110.153</code></li>
+					<li><code>185.199.111.153</code></li>
+				</ul>
 
-									<hr class="step 1" />
+				<img class="blog-step-image" alt="A Record IPs List" src="images/image6.png">
+				<img class="blog-step-image" alt="Adding A Record" src="images/image7.png">
+				<img class="blog-step-image" alt="Configured A Records" src="images/image2.png">
 
-									<body class="c4"><p class="c2"><span class="c0"><b>First, you have to go to your domain server, control panel, and go your manage orders</b> </span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 222.67px;"><img alt="" src="images/image3.png" style="width: 624.00px; height: 222.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c1"><span class="c3"></span></p><p class="c2"><span class="c0"><b>Then you get your orders list click on your domain which you have to use </b></span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 160.00px;"><img alt="" src="images/image1.png" style="width: 624.00px; height: 160.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c1"><span class="c3"></span></p><p class="c2"><span class="c0"><b>And after go your DNS Management and go Manage DNS</b></span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 257.33px;"><img alt="" src="images/image4.png" style="width: 624.00px; height: 257.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c1"><span class="c0"></span></p><p class="c2"><span class="c6"><b>And after you get this type of window and you have to go Add A record and &nbsp;add these four </b></span><span class="c6 c7"><b>IP addresses</b></span><span class="c0">&nbsp;<b>on A record one by one </b></span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 54.67px;"><img alt="" src="images/image6.png" style="width: 624.00px; height: 54.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 229.33px;"><img alt="" src="images/image7.png" style="width: 624.00px; height: 229.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c2"><span class="c0"><b>Like this </b></span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 126.67px;"><img alt="" src="images/image2.png" style="width: 624.00px; height: 126.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c1"><span class="c0"></span></p><p class="c2"><span class="c6"><b>And close that windows and go your GitHub </span><span class="c0">repositories and click on create new file</b> </span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 50.67px;"><img alt="" src="images/image5.png" style="width: 624.00px; height: 50.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c2"><span class="c6"><b>And create a new file name is CNAME and in the file, you have to </span><span class="c0 c7">write your domain name like this photo, my domain name is anshpatel.tech</b></span></p><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 122.67px;"><img alt="" src="images/image8.png" style="width: 624.00px; height: 122.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p><p class="c2"><span class="c0"><B>and click on commit a new file your file will save and now search your site. The site will be loaded</B> &nbsp; </span></p><p class="c1"><span class="c0"></span></p><p class="c1"><span class="c8"></span></p>
-										<hr><p class="c2"><span class="c5"><p style="font-size:30px"><b>Thank You.</b></p></span></p></body>
-								</section>
+				<h3 class="blog-step-title">Step 5: Create a CNAME File in your Repository</h3>
+				<p>Now, go to your repository on GitHub. Click on **Add file** and select **Create new file**.</p>
+				<img class="blog-step-image" alt="GitHub Repository Add File" src="images/image5.png">
 
-						</div>
-					</div>
+				<h3 class="blog-step-title">Step 6: Write your Domain in CNAME</h3>
+				<p>Name the new file exactly <code>CNAME</code> (in uppercase, without any extension). Inside the file, type your raw domain name (for example, <code>anshpatel.tech</code>).</p>
+				<img class="blog-step-image" alt="Create CNAME File" src="images/image8.png">
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							
-
-							<!-- manu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="blog1.html">How to Managing a custom domain for your GitHub Pages site</a></li>
-										<li><a href="https://patelansh.github.io/documentation/day1/">Assignment Day 1</a></li>
-										<li><a href="https://patelansh.github.io/assignment/day2/">Assignment Day 2</a></li>
-										<li><a href="https://docs.google.com/presentation/d/1Z6bbVAYWyd75j6kCTZlpZb3O8DxMrVptlkiqEMmceQQ/edit?usp=sharing">Problems Statement</a></li>
-										<li>
-											
-									</ul>
-								</nav>
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>If you need any help regarding Arduino, Wed developing and any Projects then mail me  </p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="">ansh4090@gmail.com</a></li>
-										
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Ansh Patel  : .</p>
-								</footer>
-
-						</div>
-					</div>
+				<h3 class="blog-step-title">Step 7: Save & Verify</h3>
+				<p>Click on **Commit new file** to save it. Within a few minutes, DNS changes will propagate. Search for your custom domain in the browser, and your GitHub Pages site will load successfully!</p>
+				
+				<div style="background: rgba(108, 99, 255, 0.05); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 8px; margin: 3rem 0 2rem 0;">
+					<h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.15rem;">Thank You!</h4>
+					<p style="color: var(--text-secondary); margin-bottom: 0; font-size: 0.95rem;">If you have any questions or ran into issues, feel free to get in touch with me via the contact details on the homepage.</p>
+				</div>
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; 2026 Ansh Patel. All rights reserved.</p>
+		</footer>
+
+		<!-- Theme Toggle Script -->
+		<script>
+			const themeToggle = document.getElementById('theme-toggle');
+			const themeIcon = themeToggle.querySelector('i');
+			
+			// Load cached theme
+			const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+			if (savedTheme === 'light') {
+				document.body.classList.add('light-theme');
+				themeIcon.className = 'fas fa-sun';
+			}
+
+			themeToggle.addEventListener('click', () => {
+				if (document.body.classList.contains('light-theme')) {
+					document.body.classList.remove('light-theme');
+					themeIcon.className = 'fas fa-moon';
+					localStorage.setItem('portfolio-theme', 'dark');
+				} else {
+					document.body.classList.add('light-theme');
+					themeIcon.className = 'fas fa-sun';
+					localStorage.setItem('portfolio-theme', 'light');
+				}
+			});
+		</script>
 
 	</body>
 </html>
