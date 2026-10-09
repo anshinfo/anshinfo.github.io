@@ -153,9 +153,20 @@
                 <div class="checkout-form">
                   <input type="text" id="custName" placeholder="Your Full Name" required>
                   <input type="tel" id="custWa" placeholder="WhatsApp Number (e.g. 9876543210)" required>
-                  <button id="payNowBtn" class="btn-pay">Pay ₹299 & Download Instantly</button>
+                  <button id="payNowBtn" class="btn-pay">Pay ₹299 via UPI</button>
                 </div>
-                <div id="paymentStatus" class="payment-status hidden"></div>
+                <div id="paymentInstructions" class="payment-status hidden">
+                  <div id="upiLinkBox"></div>
+                  <hr style="margin: 1rem 0; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+                  <label style="font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 0.35rem;">
+                    Enter 12-Digit UPI Ref / UTR Number from your bank app:
+                  </label>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <input type="text" id="utrInput" placeholder="e.g. 428190184920" style="flex: 1; padding: 0.6rem; border-radius: 6px; background: rgba(0,0,0,0.4); border: 1px solid #10b981; color: #fff;">
+                    <button id="verifyUtrBtn" style="background: #10b981; color: #000; font-weight: 700; border: none; border-radius: 6px; padding: 0.6rem 1rem; cursor: pointer;">Verify & Access</button>
+                  </div>
+                  <div id="utrMessage" style="margin-top: 0.5rem; font-size: 0.8rem;"></div>
+                </div>
               </div>
             </div>
           </div>
